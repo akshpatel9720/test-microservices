@@ -1,12 +1,15 @@
-package com.contact.service;
+package com.contact.serviceImpl;
 
 import com.contact.entity.Contact;
 import com.contact.repository.ContactRepository;
+import com.contact.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Service
 public class ContactServiceImpl implements ContactService {
@@ -22,16 +25,25 @@ public class ContactServiceImpl implements ContactService {
 //    );
 
     @Override
-    public List<Contact> getContactOfUser() {
-        List<Contact> contacts= contactRepository.findAll();
-        return contacts;
+    public Optional<Contact> getContactOfUser(Long cId) {
+        Optional<Contact> contact = contactRepository.findById(cId);
+        return contact;
     }
 
     @Override
-    public Contact register(Contact contact)
-    {
-     Contact contact1=contactRepository.save(contact);
-     return contact1;
+    public Contact register(Contact contact) {
+        return contactRepository.save(contact);
+//        return contact1;
+    }
+
+    @Override
+    public List<Contact> getContactByUserId(Long userId) {
+        return contactRepository.findByUserId(userId);
+    }
+
+    @Override
+    public void deleteContactById(Long userId) {
+        contactRepository.deleteContactById(userId);
     }
 
 

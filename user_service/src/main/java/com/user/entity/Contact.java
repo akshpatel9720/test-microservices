@@ -1,15 +1,16 @@
 package com.user.entity;
 
 public class Contact {
-    private Long cId;
+    private String cId;
     private String email;
     private String contactName;
 
     private String phoneNo;
+
     private Long userId;
 
-    public Contact(Long cId, String email, String contactName, Long userId) {
-        this.cId = cId;
+    public Contact(String cId, String email, String contactName, Long userId) {
+        this.cId=cId;
         this.email = email;
         this.contactName = contactName;
         this.userId = userId;
@@ -19,11 +20,11 @@ public class Contact {
     public Contact() {
     }
 
-    public Long getcId() {
+    public String getcId() {
         return cId;
     }
 
-    public void setcId(Long cId) {
+    public void setcId(String cId) {
         this.cId = cId;
     }
 
@@ -58,4 +59,5 @@ public class Contact {
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
     }
+
 }

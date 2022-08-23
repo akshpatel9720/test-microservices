@@ -7,6 +7,19 @@ public class UserDTO {
     public Long userId;
     public String name;
     private String cid;
+    private List<String> phoneNo;
+
+    private List<String> email;
+
+    public List<String> getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(List<String> phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+
     public List<Contact> contacts = new ArrayList<>();
 
     public Long getUserId() {
@@ -59,5 +72,13 @@ public class UserDTO {
                 ", cid='" + cid + '\'' +
                 ", contacts=" + contacts +
                 '}';
+    }
+
+    public List<String> getEmail() {
+        return email;
+    }
+
+    public void setEmail(List<String> email) {
+        this.email = email;
     }
 }

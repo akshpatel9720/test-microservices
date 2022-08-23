@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long cId;
+    private Long  cId;
     private String email;
     private String contactName;
 
